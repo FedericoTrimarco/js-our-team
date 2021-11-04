@@ -23,34 +23,63 @@ const userImg = [
     {
         pic : 'img/angela-caroll-chief-editor.jpg',
         userName : 'Angela Caroll',
-        work : 'Founder & CEO',
+        work : 'Chief Editor',
     },
     // 3
     {
         pic : 'img/walter-gordon-office-manager.jpg',
         userName : 'Walter Gordon',
-        work : 'Founder & CEO',
+        work : 'Office Manager',
     },
     // 4
     {
         pic : 'img/angela-lopez-social-media-manager.jpg',
         userName : 'Angela Lopez',
-        work : 'Founder & CEO',
+        work : 'Social Media Manager',
     },
     // 5
     {
         pic : 'img/scott-estrada-developer.jpg',
         userName : 'Scott Estrada',
-        work : 'Founder & CEO',
+        work : 'Developer',
     },
     // 6
     {
         pic : 'img/barbara-ramos-graphic-designer.jpg',
         userName : 'Barbara Ramons',
-        work : 'Founder & CEO',
+        work : 'Graphic Designer',
     },
 ];
 
 console.table(userImg);
-const addMemberSection = document.getElementById('add-member');
 
+const addMemberContainer = document.querySelector('.team-container');
+
+genCard(addMemberContainer, userImg);
+
+
+
+
+
+/**************************************
+             F U N Z I O N I
+***************************************/
+
+// Generazione Card
+function genCard(container, array){
+    for(let i = 0; i < array.length; i++){
+
+
+        container.innerHTML += `
+        <div class="team-card">
+            <div class="card-image">
+                <img src="${array[i].pic}" alt="${array[i].userName}"/>
+            </div>
+                <div class="card-text">
+                  <h3>${array[i].userName}</h3>
+                  <p>${array[i].work}</p>
+            </div>
+        </div>
+        `;
+    }
+}
