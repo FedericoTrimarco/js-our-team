@@ -54,6 +54,7 @@ const userImg = [
 
 console.log(userImg);
 
+// variabili
 const addMemberContainer = document.querySelector('.team-container');
 const newUserName = document.getElementById('name');
 const newUserRole = document.getElementById('role');
@@ -89,8 +90,7 @@ btn.addEventListener('click', function(){
 // Generazione Card
 function genCard(container, array){
     for(let i = 0; i < array.length; i++){
-
-
+    
         container.innerHTML += `
         <div class="team-card">
             <div class="card-image">
