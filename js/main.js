@@ -11,6 +11,7 @@
     Inserire a inizio del file JavaScript una sezione di commento dove scrivere gli step richiesti di logica in italiano, per aiutarvi a ragionare prima della stesura del codice.
 
 */
+
 //array di oggetti
 const userImg = [
     // 1
@@ -51,12 +52,32 @@ const userImg = [
     },
 ];
 
-console.table(userImg);
+console.log(userImg);
 
 const addMemberContainer = document.querySelector('.team-container');
+const newUserName = document.getElementById('name');
+const newUserRole = document.getElementById('role');
+const newUserImg = document.getElementById('image');
+const btn = document.getElementById('addMemberButton');
 
+// creazione card
 genCard(addMemberContainer, userImg);
 
+btn.addEventListener('click', function(){
+    // clear
+    addMemberContainer.innerHTML = '';
+    // aggiunta del nuovo oggetto all'interno dell'array
+    const newUser = {
+            pic : newUserImg.value,
+            userName : newUserName.value,
+            work : newUserRole.value,
+        }
+   
+    userImg.push(newUser);
+    console.log(userImg);
+    // ri-generazione delle card
+    genCard(addMemberContainer, userImg)
+});
 
 
 
